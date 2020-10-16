@@ -69,3 +69,5 @@ Route::get('/tarefass', function(){
 Route::get('/entrada', 'App\Http\Controllers\PortalController@index');
 
 Route::get('/equipas', 'App\Http\Controllers\PortalController@listarEquipas');
+
+Route::get('/equipa/{chave}', 'App\Http\Controllers\PortalController@listarEquipa');
