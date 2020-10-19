@@ -21,14 +21,18 @@ class PortalController extends Controller
         
     }
     public function listarEquipa(Request $request){
-        $equipa =[
+        $numero = $request -> chave;
+        $batata = $request -> chave;
+        $equipas =[
             "Equipa 1",
             "Equipa 2",
-            "Equipa 3"
+            "Equipa 3",
+            "equipa 4"
         ];
-        
-        $equipa = $equipa[$request->chave];
-        if($request->chave > 0 && $request->chave < count($equipa)){
+
+       $numero = is_numeric($numero) ? $numero:3;
+        if($batata >= 0 && $batata < count($equipas)){
+            $equipa = $equipas[$numero];
             return view('equipas', ['equipa'=>$equipa]);
         }
         else{
